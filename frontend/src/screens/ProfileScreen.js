@@ -7,7 +7,7 @@ import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import { listMyOrders } from '../actions/orderActions'
 
-const ProfileScreen = ({ location, history }) => {
+const ProfileScreen = ({  history }) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -127,7 +127,7 @@ const ProfileScreen = ({ location, history }) => {
                                     <td>{order.createdAt.substring(0, 10)}</td>
                                     <td>{order.totalPrice}</td>
                                     <td>
-                                        {order.esPaid ? order.paidAt.substring(0, 10) : (
+                                        {order.isPaid ? order.paidAt.substring(0, 10) : (
                                             <i className='fas fa-times' style={{color: 'red'}}></i>
                                         )}
                                     </td>
